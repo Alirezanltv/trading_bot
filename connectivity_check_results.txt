@@ -1,0 +1,13 @@
+MARKET DATA CONNECTIVITY CHECK RESULTS
+==================================================
+Symbol:           BTC/USDT
+Timeframe:        1m
+Data source:      tradingview
+Duration:         60.14 seconds
+Data points:      12
+Data rate:        0.20 points per second
+Last price:       48853.0
+Last update:      2025-04-06 18:04:10.381251
+
+STATUS:           SUCCESS - Data is flowing
+==================================================

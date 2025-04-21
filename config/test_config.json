@@ -1,0 +1,128 @@
+{
+  "test_mode": true,
+  "symbols": ["btc-usdt", "eth-usdt", "btc-irt", "eth-irt"],
+  "base_currency": "USDT",
+  "default_timeframe": "1h",
+  
+  "logging": {
+    "level": "INFO",
+    "file": "logs/trading_system.log",
+    "max_size_mb": 10,
+    "backup_count": 5
+  },
+  
+  "exchange": {
+    "name": "mock",
+    "api_key": "${EXCHANGE_API_KEY}",
+    "api_secret": "${EXCHANGE_API_SECRET}",
+    "delay_seconds": 0.1,
+    "failure_rate": 0.0
+  },
+  
+  "market_data": {
+    "provider": "mock",
+    "data_directory": "data/market_data",
+    "cache_expiry_seconds": 60,
+    "update_interval_seconds": 60,
+    "historical_data_days": 30
+  },
+  
+  "execution": {
+    "max_retries": 3,
+    "retry_delay_seconds": 1.0,
+    "circuit_breaker_threshold": 3,
+    "circuit_breaker_reset_seconds": 300,
+    "orders_directory": "data/orders",
+    "max_active_orders": 100,
+    "order_validation_timeout_seconds": 5
+  },
+  
+  "position": {
+    "positions_directory": "data/positions",
+    "reconciliation_interval_seconds": 300,
+    "max_positions_per_symbol": 5,
+    "position_check_interval_seconds": 60
+  },
+  
+  "risk_management": {
+    "risk_per_trade_percent": 1.0,
+    "position_sizing": "fixed_value",
+    "max_position_value": 1000.0,
+    "max_drawdown_percent": 10.0,
+    "max_portfolio_risk_percent": 5.0,
+    "stop_loss_percent": 5.0,
+    "take_profit_percent": 15.0
+  },
+  
+  "symbols_settings": {
+    "btc-usdt": {
+      "min_quantity": 0.001,
+      "max_quantity": 1.0,
+      "quantity_precision": 6,
+      "price_precision": 2,
+      "min_notional": 10.0,
+      "max_position_percent": 20.0
+    },
+    "eth-usdt": {
+      "min_quantity": 0.01,
+      "max_quantity": 10.0,
+      "quantity_precision": 4,
+      "price_precision": 2,
+      "min_notional": 10.0,
+      "max_position_percent": 20.0
+    },
+    "btc-irt": {
+      "min_quantity": 0.001,
+      "max_quantity": 1.0,
+      "quantity_precision": 6,
+      "price_precision": 0,
+      "min_notional": 500000.0,
+      "max_position_percent": 20.0
+    },
+    "eth-irt": {
+      "min_quantity": 0.01,
+      "max_quantity": 10.0,
+      "quantity_precision": 4,
+      "price_precision": 0,
+      "min_notional": 500000.0,
+      "max_position_percent": 20.0
+    }
+  },
+  
+  "strategies": [
+    {
+      "id": "rsi_strategy_1",
+      "type": "rsi",
+      "symbols": ["btc-usdt"],
+      "timeframe": "1h",
+      "rsi_period": 14,
+      "oversold_threshold": 30,
+      "overbought_threshold": 70,
+      "exit_threshold": 50,
+      "signal_smoothing": 1
+    },
+    {
+      "id": "rsi_strategy_2",
+      "type": "rsi",
+      "symbols": ["eth-usdt"],
+      "timeframe": "4h",
+      "rsi_period": 14,
+      "oversold_threshold": 35,
+      "overbought_threshold": 65,
+      "exit_threshold": 50,
+      "signal_smoothing": 2
+    }
+  ],
+  
+  "account": {
+    "balance": 10000.0,
+    "currency": "USDT"
+  },
+  
+  "controller": {
+    "cycle_time_seconds": 1.0,
+    "reconciliation_interval_seconds": 300,
+    "max_errors_before_shutdown": 10,
+    "performance_log_interval_minutes": 60
+  }
+} 

@@ -1,0 +1,95 @@
+{
+  "log_level": "info",
+  "signal_check_interval_seconds": 60,
+  "max_signal_history": 100,
+  "risk_per_trade": 0.02,
+  "symbols": ["btc-rls", "eth-rls"],
+  "timeframe": "1h",
+  
+  "tradingview_credentials": {
+    "username": "",
+    "password": ""
+  },
+  
+  "strategies": [
+    {
+      "name": "RSI Strategy",
+      "type": "RSI",
+      "symbols": ["btc-rls", "eth-rls"],
+      "timeframes": ["1h"],
+      "parameters": {
+        "rsi_period": 14,
+        "overbought_threshold": 70,
+        "oversold_threshold": 30,
+        "exit_threshold": 50,
+        "signal_smoothing": 2
+      },
+      "risk_multiplier": 1.0
+    }
+  ],
+  
+  "execution_engine": {
+    "order_timeout_seconds": 60,
+    "max_retry_attempts": 3,
+    "retry_delay_seconds": 5,
+    "circuit_breaker": {
+      "max_consecutive_errors": 3,
+      "reset_after_seconds": 300
+    },
+    "order_book_depth": 10,
+    "exchange": "nobitex"
+  },
+  
+  "position_manager": {
+    "db_path": "data/positions.db",
+    "reconcile_interval_seconds": 300,
+    "position_id_prefix": "POS",
+    "max_positions_per_symbol": 1,
+    "persistence": {
+      "enabled": true,
+      "backup_interval_minutes": 60
+    }
+  },
+  
+  "exchange_config": {
+    "nobitex": {
+      "api_key": "",
+      "api_secret": "",
+      "base_url": "https://api.nobitex.ir",
+      "timeout_seconds": 30
+    }
+  },
+  
+  "risk_management": {
+    "max_drawdown_percent": 10,
+    "daily_loss_limit_percent": 5,
+    "max_open_positions": 5,
+    "position_size_limits": {
+      "btc-rls": {
+        "min": 0.001,
+        "max": 1.0
+      },
+      "eth-rls": {
+        "min": 0.01,
+        "max": 10.0
+      }
+    }
+  },
+  
+  "monitoring": {
+    "enabled": true,
+    "status_update_interval_seconds": 60,
+    "metrics": ["positions", "orders", "balance", "pnl"],
+    "alerts": {
+      "email": {
+        "enabled": false,
+        "recipients": []
+      },
+      "telegram": {
+        "enabled": false,
+        "bot_token": "",
+        "chat_id": ""
+      }
+    }
+  }
+} 

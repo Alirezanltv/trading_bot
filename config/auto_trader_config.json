@@ -1,0 +1,26 @@
+{
+  "scan_interval": 3600,
+  "trade_interval": 300,
+  "max_open_positions": 3,
+  "max_single_position_size": 0.09,
+  "rsi_buy_threshold": 25,
+  "rsi_sell_threshold": 75,
+  "trailing_stop_loss_percent": 2.0,
+  "profit_target_percent": 3.0,
+  "ema_fast_period": 9,
+  "ema_slow_period": 21,
+  "timeframes": [
+    "1h",
+    "4h",
+    "1d"
+  ],
+  "preferred_markets": [
+    "btc-rls",
+    "eth-rls",
+    "usdt-rls"
+  ],
+  "max_price_history_days": 7,
+  "confirmation_needed": true,
+  "min_volume_for_trade": 100000,
+  "max_daily_trades": 5
+}

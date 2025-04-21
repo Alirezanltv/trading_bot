@@ -1,0 +1,27 @@
+# High Availability Requirements
+# Additional dependencies for high-reliability features
+
+# Web Dashboard
+aiohttp>=3.8.1
+aiohttp-jinja2>=1.5.0
+jinja2>=3.0.3
+
+# Message Queue
+pika>=1.2.0
+kombu>=5.2.3
+
+# Metrics and Monitoring
+prometheus-client>=0.14.1
+statsd>=3.3.0
+
+# Circuit Breaker Pattern
+pybreaker>=0.6.0
+
+# Production-ready async tools
+uvloop>=0.16.0
+aiodns>=3.0.0
+aiohttp-cors>=0.7.0
+
+# Testing
+pytest-asyncio>=0.18.3
+aioresponses>=0.7.3 

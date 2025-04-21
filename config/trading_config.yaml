@@ -1,0 +1,122 @@
+# Trading Configuration
+
+# API Configuration
+api:
+  base_url: "https://api.nobitex.ir"
+  ws_url: "wss://ws.nobitex.ir/ws"
+  timeout: 30
+
+# Trading Parameters
+trading:
+  capital:
+    total: 50000  # Toman
+    risk_per_trade: 20000  # Toman
+    max_daily_loss: 20000  # Toman
+  trading_pairs:
+    - symbol: "USDTIRT"
+      base: "USDT"
+      quote: "IRT"
+      min_volume: 1000
+      price_precision: 2
+      volume_precision: 2
+  limits:
+    max_trades_per_day: 4
+    min_profit_target: 0.10  # 10%
+    trade_cooldown: 300  # seconds
+
+# Risk Management
+risk:
+  stop_loss:
+    default: 0.02  # 2%
+    trailing: true
+    activation: 0.01  # 1% profit
+  take_profit:
+    default: 0.10  # 10%
+    trailing: true
+    activation: 0.05  # 5% profit
+  position_sizing:
+    max_position_size: 0.4  # 40% of total capital per trade
+    min_position_size: 0.1  # 10% of total capital per trade
+
+# Technical Analysis
+technical_analysis:
+  indicators:
+    rsi:
+      period: 14
+      overbought: 70
+      oversold: 30
+    macd:
+      fast_period: 12
+      slow_period: 26
+      signal_period: 9
+    bollinger_bands:
+      period: 20
+      std_dev: 2
+    moving_averages:
+      sma: [20, 50, 200]
+      ema: [9, 21]
+  timeframes:
+    - "1h"  # Primary timeframe
+    - "4h"  # Secondary timeframe for trend confirmation
+    - "1d"  # Long-term trend analysis
+
+# AI Model Configuration
+ai:
+  model:
+    type: "ensemble"  # Using ensemble of models
+    components:
+      - type: "lstm"
+        layers: [64, 32]
+        dropout: 0.2
+      - type: "xgboost"
+        max_depth: 6
+        learning_rate: 0.1
+    features:
+      - technical_indicators
+      - market_sentiment
+      - volume_analysis
+      - price_patterns
+    prediction_horizon: 24  # hours
+    confidence_threshold: 0.75  # Minimum confidence for trade execution
+
+# Data Collection
+data:
+  historical:
+    timeframe: "1h"
+    limit: 1000
+    storage_path: "data/historical"
+  realtime:
+    update_interval: 60  # seconds
+    storage_path: "data/realtime"
+  market_sentiment:
+    update_interval: 300  # seconds
+    sources:
+      - "orderbook_imbalance"
+      - "volume_profile"
+      - "price_momentum"
+
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/trading_bot.log"
+  max_size: 10485760  # 10MB
+  backup_count: 5
+
+# Notifications
+notifications:
+  email:
+    enabled: true
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    sender_email: "alirezakanani.project@gmail.com"
+    receiver_email: "alirezakanani.project@gmail.com"
+    report_frequency: "daily"
+    alert_types:
+      - "trade_execution"
+      - "stop_loss_hit"
+      - "take_profit_hit"
+      - "market_anomaly"
+      - "daily_summary"
+  telegram:
+    enabled: false
+    chat_id: "" 

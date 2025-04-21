@@ -1,0 +1,146 @@
+2025-04-04 18:21:44,213 - root - INFO - Logging initialized. Level: INFO, File: trading_system_test.log
+2025-04-04 18:21:44,215 - core.message_bus - INFO - Message bus initialized
+2025-04-04 18:21:44,215 - core.config - INFO - ConfigManager initialized successfully
+2025-04-04 18:21:44,216 - component.databasemanager-acb38b1a - INFO - Component databasemanager-acb38b1a created
+2025-04-04 18:21:44,216 - core.database - ERROR - Error initializing database manager: 'DatabaseManager' object has no attribute '_update_status'
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\core\database.py", line 895, in initialize
+    self._update_status(ComponentStatus.INITIALIZING)
+AttributeError: 'DatabaseManager' object has no attribute '_update_status'
+2025-04-04 18:21:44,218 - end_to_end_test - ERROR - Error in end-to-end test: 'DatabaseManager' object has no attribute '_update_status'
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\core\database.py", line 895, in initialize
+    self._update_status(ComponentStatus.INITIALIZING)
+AttributeError: 'DatabaseManager' object has no attribute '_update_status'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\end_to_end_test.py", line 65, in main
+    await db_manager.initialize()
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\core\database.py", line 924, in initialize
+    self._update_status(ComponentStatus.ERROR, str(e))
+AttributeError: 'DatabaseManager' object has no attribute '_update_status'
+2025-04-04 18:22:26,686 - root - INFO - Logging initialized. Level: INFO, File: trading_system_test.log
+2025-04-04 18:22:26,688 - core.message_bus - INFO - Message bus initialized
+2025-04-04 18:22:26,688 - core.config - INFO - ConfigManager initialized successfully
+2025-04-04 18:22:26,689 - component.databasemanager-0addeec9 - INFO - Component databasemanager-0addeec9 created
+2025-04-04 18:22:26,689 - core.database - ERROR - Error initializing database manager: 'DatabaseManager' object has no attribute 'set_status'
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\core\database.py", line 896, in initialize
+    self.set_status(ComponentStatus.INITIALIZING)
+AttributeError: 'DatabaseManager' object has no attribute 'set_status'
+2025-04-04 18:22:26,691 - end_to_end_test - ERROR - Error in end-to-end test: 'DatabaseManager' object has no attribute 'set_status'
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\core\database.py", line 896, in initialize
+    self.set_status(ComponentStatus.INITIALIZING)
+AttributeError: 'DatabaseManager' object has no attribute 'set_status'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\end_to_end_test.py", line 65, in main
+    await db_manager.initialize()
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\core\database.py", line 925, in initialize
+    self.set_status(ComponentStatus.ERROR, str(e))
+AttributeError: 'DatabaseManager' object has no attribute 'set_status'
+2025-04-04 18:23:24,026 - root - INFO - Logging initialized. Level: INFO, File: trading_system_test.log
+2025-04-04 18:23:24,029 - core.message_bus - INFO - Message bus initialized
+2025-04-04 18:23:24,029 - core.config - INFO - ConfigManager initialized successfully
+2025-04-04 18:23:24,029 - component.databasemanager-a0c932ed - INFO - Component databasemanager-a0c932ed created
+2025-04-04 18:23:24,030 - core.database - INFO - Initializing database manager
+2025-04-04 18:23:26,790 - core.database - INFO - Initializing default settings
+2025-04-04 18:23:26,790 - core.database - INFO - Default settings initialized (test mode)
+2025-04-04 18:23:26,791 - core.database - INFO - Database manager initialized successfully
+2025-04-04 18:23:26,791 - core.database - INFO - Starting database manager
+2025-04-04 18:23:26,792 - core.database - INFO - Database manager started successfully
+2025-04-04 18:23:26,792 - component.exchangemanager-3c6eaa78 - INFO - Component exchangemanager-3c6eaa78 created
+2025-04-04 18:23:26,792 - exchange.base - INFO - Initializing exchange manager
+2025-04-04 18:23:26,793 - exchange.base - ERROR - Error initializing exchange manager: object NoneType can't be used in 'await' expression
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\exchange\base.py", line 652, in initialize
+    await self.message_bus.subscribe(MessageTypes.EXECUTION_ORDER_REQUEST, self._handle_order_message)
+TypeError: object NoneType can't be used in 'await' expression
+2025-04-04 18:23:26,794 - exchange.base - INFO - Starting exchange manager
+2025-04-04 18:23:26,795 - exchange.base - INFO - Exchange manager started successfully
+2025-04-04 18:23:26,795 - component.marketdatamanager-327f0f4b - INFO - Component marketdatamanager-327f0f4b created
+2025-04-04 18:23:26,795 - market_data.manager - ERROR - Error initializing Market Data Manager: 'MarketDataManager' object has no attribute '_update_status'
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\market_data\manager.py", line 74, in initialize
+    self._update_status(ComponentStatus.INITIALIZING)
+AttributeError: 'MarketDataManager' object has no attribute '_update_status'
+2025-04-04 18:23:26,797 - end_to_end_test - ERROR - Error in end-to-end test: 'MarketDataManager' object has no attribute '_update_status'
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\market_data\manager.py", line 74, in initialize
+    self._update_status(ComponentStatus.INITIALIZING)
+AttributeError: 'MarketDataManager' object has no attribute '_update_status'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\end_to_end_test.py", line 88, in main
+    await market_data_manager.initialize()
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\market_data\manager.py", line 98, in initialize
+    self._update_status(ComponentStatus.ERROR, str(e))
+AttributeError: 'MarketDataManager' object has no attribute '_update_status'
+2025-04-04 18:24:38,665 - root - INFO - Logging initialized. Level: INFO, File: trading_system_test.log
+2025-04-04 18:24:38,667 - core.message_bus - INFO - Message bus initialized
+2025-04-04 18:24:38,667 - core.config - INFO - ConfigManager initialized successfully
+2025-04-04 18:24:38,668 - component.databasemanager-8bb5cf5c - INFO - Component databasemanager-8bb5cf5c created
+2025-04-04 18:24:38,668 - core.database - INFO - Initializing database manager
+2025-04-04 18:24:38,670 - core.database - INFO - Initializing default settings
+2025-04-04 18:24:38,670 - core.database - INFO - Default settings initialized (test mode)
+2025-04-04 18:24:38,670 - core.database - INFO - Database manager initialized successfully
+2025-04-04 18:24:38,670 - core.database - INFO - Starting database manager
+2025-04-04 18:24:38,671 - core.database - INFO - Database manager started successfully
+2025-04-04 18:24:38,671 - component.exchangemanager-2340cd3b - INFO - Component exchangemanager-2340cd3b created
+2025-04-04 18:24:38,671 - exchange.base - INFO - Initializing exchange manager
+2025-04-04 18:24:38,672 - exchange.base - ERROR - Error initializing exchange manager: object NoneType can't be used in 'await' expression
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\exchange\base.py", line 652, in initialize
+    await self.message_bus.subscribe(MessageTypes.EXECUTION_ORDER_REQUEST, self._handle_order_message)
+TypeError: object NoneType can't be used in 'await' expression
+2025-04-04 18:24:38,674 - exchange.base - INFO - Starting exchange manager
+2025-04-04 18:24:38,674 - exchange.base - INFO - Exchange manager started successfully
+2025-04-04 18:24:38,674 - component.marketdatamanager-fb886b5d - INFO - Component marketdatamanager-fb886b5d created
+2025-04-04 18:24:38,675 - market_data.manager - INFO - Initializing Market Data Manager
+2025-04-04 18:24:38,675 - market_data.tradingview - INFO - Initializing TradingView data provider
+2025-04-04 18:24:42,364 - market_data.tradingview - ERROR - Error connecting to TradingView: server rejected WebSocket connection: HTTP 403
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\market_data\tradingview.py", line 352, in _connect
+    self._websocket = await websockets.connect(
+  File "C:\Users\Alireza\AppData\Local\Programs\Python\Python310\lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+  File "C:\Users\Alireza\AppData\Local\Programs\Python\Python310\lib\asyncio\tasks.py", line 445, in wait_for
+    return fut.result()
+  File "C:\Users\Alireza\AppData\Local\Programs\Python\Python310\lib\site-packages\websockets\legacy\client.py", line 666, in __await_impl__
+    await protocol.handshake(
+  File "C:\Users\Alireza\AppData\Local\Programs\Python\Python310\lib\site-packages\websockets\legacy\client.py", line 332, in handshake
+    raise InvalidStatusCode(status_code, response_headers)
+websockets.exceptions.InvalidStatusCode: server rejected WebSocket connection: HTTP 403
+2025-04-04 18:24:42,369 - market_data.tradingview - ERROR - Failed to connect to TradingView
+2025-04-04 18:24:42,369 - market_data.manager - ERROR - Failed to initialize TradingView data provider
+2025-04-04 18:24:42,369 - market_data.manager - ERROR - Failed to initialize TradingView provider
+2025-04-04 18:24:42,370 - market_data.manager - ERROR - No market data providers initialized
+2025-04-04 18:24:42,370 - market_data.manager - INFO - Starting Market Data Manager
+2025-04-04 18:24:42,370 - market_data.manager - INFO - Market Data Manager started successfully
+2025-04-04 18:24:42,371 - component.strategyfactory-0e32f843 - INFO - Component strategyfactory-0e32f843 created
+2025-04-04 18:24:42,371 - strategy.factory - ERROR - Error initializing strategy factory: 'StrategyFactory' object has no attribute '_update_status'
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\strategy\factory.py", line 561, in initialize
+    self._update_status(ComponentStatus.INITIALIZING)
+AttributeError: 'StrategyFactory' object has no attribute '_update_status'
+2025-04-04 18:24:42,372 - end_to_end_test - ERROR - Error in end-to-end test: 'StrategyFactory' object has no attribute '_update_status'
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\strategy\factory.py", line 561, in initialize
+    self._update_status(ComponentStatus.INITIALIZING)
+AttributeError: 'StrategyFactory' object has no attribute '_update_status'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\end_to_end_test.py", line 109, in main
+    await strategy_factory.initialize()
+  File "E:\Programming\Trading_bot_4.4.2025\trading_system\strategy\factory.py", line 577, in initialize
+    self._update_status(ComponentStatus.ERROR, str(e))
+AttributeError: 'StrategyFactory' object has no attribute '_update_status'

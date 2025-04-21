@@ -1,0 +1,40 @@
+{
+    "symbols": ["btc-usdt", "eth-usdt"],
+    "market_data": {
+        "update_interval": 10,
+        "provider": "simulated",
+        "volatility": 0.02,
+        "trend": 0.0005
+    },
+    "strategy": {
+        "rsi_period": 14,
+        "overbought_threshold": 70,
+        "oversold_threshold": 30,
+        "signal_smoothing": 3
+    },
+    "position_manager": {
+        "persistence_enabled": true,
+        "persistence_path": "data/positions",
+        "max_positions": 5,
+        "max_position_value": 1000.0
+    },
+    "execution_engine": {
+        "persistence_enabled": true,
+        "persistence_path": "data/orders",
+        "circuit_breaker_enabled": true,
+        "failure_threshold": 3,
+        "circuit_open_timeout": 300
+    },
+    "risk_management": {
+        "max_drawdown_percent": 10.0,
+        "max_daily_loss_percent": 5.0,
+        "position_size_percent": 2.0,
+        "stop_loss_percent": 5.0
+    },
+    "logging": {
+        "level": "INFO",
+        "console_output": true,
+        "file_output": true,
+        "log_dir": "logs"
+    }
+} 

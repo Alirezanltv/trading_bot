@@ -1,0 +1,7 @@
+{
+    "max_coins_to_monitor": 10,
+    "scan_interval": 120,
+    "max_single_position_size": 0.4,
+    "dynamic_thresholds": true,
+    "default_threshold": 1.8
+}
